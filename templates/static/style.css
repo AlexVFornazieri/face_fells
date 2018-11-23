@@ -14,3 +14,16 @@ body {
     width: 50%;
     margin-bottom: 10px;
 }
+
+#imageFeels span {
+    display: inline-block;
+    height: 120px;
+    width: 140px;
+    background-image: url(emoticons.png);
+    background-position-x: -40px;
+    background-position-y: -30px;
+}
+
+#imageFeels span.anger {
+    
+}

@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Feels like a dream</title>
-
     <link rel="stylesheet" type="text/css" media="screen" href="/static/style.css">
 </head>
 <body>
 <progress value="0" max="100" id="uploadProgress"></progress>
 <input type="file" id="fileInput">
+
+<img src="" id="analysedImage">
+<div id="imageFeels">
+    <span class="joy"></span>
+    <span class="sorrow"></span>
+    <span class="anger"></span>
+    <span class="surprise"></span>
+    <span class="underExposed"></span>
+    <span class="blurred"></span>
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
 <script>
     // Initialize Firebase
