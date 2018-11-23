@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feels like a dream</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/style.css">
+</head>
+<body>
+<progress value="0" max="100" id="uploadProgress"></progress>
+<input type="file" id="fileInput">
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA_8l9XeID8_mxdfGhzEjIpB0Z2C4d_4-M",
+        authDomain: "back-end-santos-test.firebaseapp.com",
+        databaseURL: "https://back-end-santos-test.firebaseio.com",
+        projectId: "back-end-santos-test",
+        storageBucket: "back-end-santos-test.appspot.com",
+        messagingSenderId: "1010132593018"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="/static/actions.js"></script>
+</body>
+</html>
