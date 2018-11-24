@@ -9,8 +9,13 @@ const fellsText = ['Feliz', 'Triste', 'Com raiva', 'Surpresa', 'Pouca exposixão
 // DOM elements
 const uploadProgress = document.getElementById('uploadProgress');
 const fileInput = document.getElementById('fileInput');
+const uploadButton = document.getElementById('uploadButton');
 const analysedImage = document.getElementById('analysedImage');
 const imageFeels = document.getElementById('imageFeels');
+
+uploadButton.addEventListener('click', function (e) {
+  fileInput.click()
+})
 
 
 // The user select a file
@@ -18,8 +23,10 @@ fileInput.addEventListener('change', function (e) {
   const file = e.target.files[0];
   if (file) {
     imageFeels.innerHTML = '';
-    fileInput.style.display = 'none';
+    uploadButton.innerHTML = 'Enviando...';
+    uploadButton.disabled = true;
     analysedImage.style.display = 'none';
+    uploadProgress.style.display = 'block';
     uploadFile(file);
   }
 });
@@ -57,14 +64,11 @@ function uploadFile(file) {
   )
 }
 
-
 /**
  * Vision annotate faces detection
  * @param path
  */
 function submitToVision(path) {
-  const API_KEY = 'AIzaSyDLns0jY32H1bhq-8ESm_LD20XrTTseSA0';
-
   const requestBody =
     {
       "requests": [
@@ -93,7 +97,7 @@ function submitToVision(path) {
       processResult(JSON.parse(this.responseText))
     }
   };
-  xhttp.open("POST", `https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}`, true);
+  xhttp.open("POST", `https://vision.googleapis.com/v1/images:annotate?key=${config.visionApiKey}`, true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify(requestBody));
 }
@@ -104,8 +108,8 @@ function submitToVision(path) {
  */
 function processResult(response) {
   if (!response.responses[0].faceAnnotations) {
-    console.log("Não encontrado faces");
-    // TODO Inform user
+    // No faces detected
+    showResults(false);
     return
   }
   const annotations = response.responses[0].faceAnnotations[0];
@@ -122,8 +126,8 @@ function processResult(response) {
   }
 
   // Order by likely
-  results.sort(dynamicSort('score'));
-  showResults(results.reverse())
+  results.sort(dynamicSort('-score'));
+  showResults(results)
 }
 
 /**
@@ -135,18 +139,29 @@ function showResults(results) {
   uploadProgress.style.display = 'none';
   analysedImage.style.display = 'block';
 
-  if (results[0].score >= 2) {
+  uploadButton.innerHTML = 'Enviar outro arquivo';
+  uploadButton.disabled = false;
+
+  if (results && results[0].score >= 2) {
+    // Unlikely or more than
     appendFeel(results[0].feel);
+
+    // Expressions can contains more than one likely feels
     if (results[1].score === 5) {
       appendFeel(results[1].feel)
     }
   } else {
+    // Unknown or Very Unlikely all
     appendFeel('unknown')
   }
 
   console.log(results)
 }
 
+/**
+ * Append fell emoji to DOM
+ * @param feel
+ */
 function appendFeel(feel) {
   var span = document.createElement('span');
   var className = feel;

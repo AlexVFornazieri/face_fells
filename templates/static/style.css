@@ -8,6 +8,32 @@ body {
     flex-direction: column;
 }
 
+#header {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #2ecc71;
+    color: #f7fbfc;
+
+    position: absolute;
+    top: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+#header p {
+    padding: 0;
+    margin: 0;
+}
+
+#header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+#fileInput {
+    display: none;
+}
+
 #uploadProgress {
     width: 50%;
     margin-bottom: 10px;
@@ -21,6 +47,7 @@ body {
 
 #analysedImage {
     max-width: 200px;
+    display: none;
 }
 
 #imageFeels span.anger {
@@ -41,4 +68,36 @@ body {
 
 #imageFeels span.unknown {
     background-image: url(emoj/emoj_fells_unknown.png);
+}
+
+.btn {
+    position: relative;
+    cursor: pointer;
+
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+
+    overflow: hidden;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+    background-color: #2ecc71;
+    color: #ecf0f1;
+
+    transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #27ae60;
+}
+
+button:disabled,
+button[disabled] {
+    opacity: .7;
+    pointer-events: none;
+    cursor: not-allowed;
 }
