@@ -9,8 +9,6 @@ body {
 }
 
 #uploadProgress {
-    -webkit-appearance: none;
-    appearance: none;
     width: 50%;
     margin-bottom: 10px;
 }
@@ -21,38 +19,26 @@ body {
     width: 80px;
 }
 
-#imageFeels span.anger {
-    background-image: url(emoj/emoj_fells_anger.png);
+#analysedImage {
+    max-width: 200px;
 }
 
-#imageFeels span.anger.very{
-    background-image: url(emoj/emoj_fells_very_anger.png);
+#imageFeels span.anger {
+    background-image: url(emoj/emoj_fells_anger.png);
 }
 
 #imageFeels span.joy {
     background-image: url(emoj/emoj_fells_joy.png);
 }
 
-#imageFeels span.joy.very{
-    background-image: url(emoj/emoj_fells_very_joy.png);
-}
-
 #imageFeels span.sorrow {
     background-image: url(emoj/emoj_fells_sorrow.png);
-}
-
-#imageFeels span.sorrow.very{
-    background-image: url(emoj/emoj_fells_very_sorrow.png);
 }
 
 #imageFeels span.surprise {
     background-image: url(emoj/emoj_fells_surprise.png);
 }
 
-#imageFeels span.surprise.very{
-    background-image: url(emoj/emoj_fells_very_surprise.png);
-}
-
-#imageFeels span.unknown{
+#imageFeels span.unknown {
     background-image: url(emoj/emoj_fells_unknown.png);
 }
