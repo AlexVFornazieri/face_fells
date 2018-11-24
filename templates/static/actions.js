@@ -1,10 +1,8 @@
 // likelihoods intensity enum
 const likelihoods = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
-const likelihoodsText = ['Desconhecido', 'Muito improvável', 'Improvável', 'Possível', 'Provavél', 'Muito provavél'];
 
 // Returned feelings list
-const fells = ['joy', 'sorrow', 'anger', 'surprise', 'underExposed', 'blurred'];
-const fellsText = ['Feliz', 'Triste', 'Com raiva', 'Surpresa', 'Pouca exposixão', 'Desfocada'];
+const fells = ['joy', 'sorrow', 'anger', 'surprise'];
 
 // DOM elements
 const uploadProgress = document.getElementById('uploadProgress');

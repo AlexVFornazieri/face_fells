@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Feels like a dream</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="/static/style.css">
 </head>
 <body>
 
-<header id="header">
-    <h3>Qual sentimento?</h3>
-    <p>Envie imagem com uma expressão facial.</p>
-</header>
+<button class="btn" id="uploadButton">Enviar arquivo</button>
 
 <img src="" id="analysedImage">
 <div id="imageFeels"></div>
-
-<button class="btn" id="uploadButton">Enviar arquivo</button>
 
 <progress value="0" max="100" id="uploadProgress"></progress>
 <input type="file" id="fileInput">
