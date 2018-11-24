@@ -114,6 +114,7 @@ function processResult(response) {
 
   var results = [];
 
+  // Each fell has you likely score
   for (var x = 0; x < fells.length; x++) {
     const fell = fells[x];
     const likelihood = annotations[fell + 'Likelihood'];
@@ -123,7 +124,7 @@ function processResult(response) {
     })
   }
 
-  // Order by likely
+  // Order by likely score
   results.sort(dynamicSort('-score'));
   showResults(results)
 }
