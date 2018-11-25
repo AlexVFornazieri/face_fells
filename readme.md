@@ -9,9 +9,11 @@ a expressão facial contida na mesma.
 
 #### Impedimentos (dificuldades)
 A tentativa de submeter e mapear resultado de analise da imagem do/ao Cloud Vision não obteve sucesso devido ao erro: 
-No module named cloud in "from google.cloud import vision", mesmo o pacote estando devidamente instalado no ambiente de desenvolvimento, após várias tentativas de solucionar o erro, todas sem sucesso, optei por realizar a requisição ao vision diretamente do front-end. O backend continuou com a função de servir o template e os arquivos estáticos.
+No module named cloud in "from google.cloud import vision", mesmo o pacote estando devidamente instalado no ambiente de desenvolvimento.
 
-A requição ao Vision poderia ser realizada pelo backend sem a nescesidade de importar a API do vision usando mesma lógica no front, isso diminuiria a carga de código no front e uma melhor manuteção na evolução do processo de análise da imagem, mas optei por realizar em JS pela familirialidade com a linguagem.
+Após várias tentativas de solucionar o erro, todas sem sucesso, optei por realizar a requisição ao vision diretamente do front-end. O backend continuou com a função de servir o template e os arquivos estáticos.
+
+A requição ao Vision poderia ser realizada pelo backend sem a nescesidade de importar a API do vision usando mesma lógica no front. Isso diminuiria a carga de código no front e uma melhor manuteção e evolução do processo de análise da imagem, mas optei por realizar em JS pela familirialidade com a linguagem.
 
 ### Percepições
 Durante os destes de retorno das anotações de reconhecimento facil do Cloud Vision pude perceber que algumas imagens poderiam estar visualmente mais de um sentimento ao nivél "muito provavél", então fiz questão de que o código pudese mostrar mais de um resultado ao usuário caso isso ocorra.
