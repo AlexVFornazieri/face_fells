@@ -4,7 +4,7 @@ Desafio para vaga de desenvedor.
 
 ### Objetivo
 Desenvolver uma simples aplicação web que envie
-um arquivo de imagem ao Firebase Storage e reconheça 
+um arquivo de imagem ecolhido pelo usuário ao Firebase Storage e reconheça 
 a expressão facial contida na mesma.
 
 #### Impedimentos (dificuldades)
