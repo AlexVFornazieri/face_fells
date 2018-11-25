@@ -1,6 +1,6 @@
 ## Fails or feels like a dream
 
-Desafio para vaga de desenvedor.
+Desafio para vaga de desenvolvedor.
 
 ### Objetivo
 Desenvolver uma simples aplicação web que envie
@@ -19,4 +19,4 @@ A requição ao Vision poderia ser realizada pelo backend sem a nescesidade de i
 Durante os destes de retorno das anotações de reconhecimento facil do Cloud Vision pude perceber que algumas imagens poderiam estar visualmente mais de um sentimento ao nivél "muito provavél", então fiz questão de que o código pudese mostrar mais de um resultado ao usuário caso isso ocorra.
 
 Mesmo sabendo tecnicas mais modernas de programação front-end e usa-las no dia-a-dia, suas blibiotecas, frameowrks, transpiladores, etc.,
-é sempre interesante voltar as origens e escrever um código puro. Essa aplicação utilizou apenas a SDK do Firebase como apoio e me recordou de quando fiz meus primeiros códigos de requisão Ajax ao meu servidor PHP, ótima experiência!
+é sempre interesante voltar as origens e escrever um código puro. Essa aplicação utilizou apenas a SDK do Firebase para realizar o upload, me recordou de meus primeiros códigos de requisão Ajax ao meu servidor PHP, ótima experiência!
