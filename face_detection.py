@@ -1,7 +1,12 @@
+# coding=utf-8
 def detect_faces_uri(uri):
     from google.cloud import vision
-
-    """Detects faces in the file located in Google Cloud Storage or the web."""
+    """
+    Código de exemplo na documentação do Google Cloud para teste
+    Não sendo utilizado devido ao erro: no module named cloud (Window)
+    Todo processamento de requisição no front-end
+    Detects faces in the file located in Google Cloud Storage or the web.
+    """
     client = vision.ImageAnnotatorClient()
     image = vision.types.Image()
     image.source.image_uri = uri
