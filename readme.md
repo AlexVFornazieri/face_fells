@@ -4,19 +4,16 @@ Desafio para vaga de desenvolvedor.
 
 ### Objetivo
 Desenvolver uma simples aplicação web que envie
-um arquivo de imagem ecolhido pelo usuário ao Firebase Storage e reconheça 
+um arquivo de imagem escolhido pelo usuário ao Firebase Storage e reconheça 
 a expressão facial contida na mesma.
 
 #### Impedimentos (dificuldades)
-A tentativa de submeter e mapear resultado de analise da imagem do/ao Cloud Vision não obteve sucesso devido ao erro: 
-No module named cloud in "from google.cloud import vision", mesmo o pacote estando devidamente instalado no ambiente de desenvolvimento.
+A tentativa de submeter e mapear resultado de análise da imagem do/ao Cloud Vision não obteve sucesso devido ao erro: 
+No module named cloud in "from google.cloud import vision" na execução do servidor de desenvolvimento, mesmo o pacote estando devidamente instalado no ambiente de desenvolvimento. Esse mesmo erro aconteceu com outras libs que tentei usar para fazer requisição HTTP direta sem o uso da API do vision.
 
-Após várias tentativas de solucionar o erro, todas sem sucesso, optei por realizar a requisição ao vision diretamente do front-end. O backend continuou com a função de servir o template e os arquivos estáticos.
+Após várias tentativas de solucionar o erro, todas sem sucesso, e julgar não ter tempo hábil para instalar e configurar outro SO para testar (como o Ubuntu) optei por realizar a requisição ao vision diretamente do front-end. O backend continuou com a função de servir o template e os arquivos estáticos.
 
-A requição ao Vision poderia ser realizada pelo backend sem a nescesidade de importar a API do vision usando mesma lógica no front. Isso diminuiria a carga de código no front e uma melhor manuteção e evolução do processo de análise da imagem, mas optei por realizar em JS pela familirialidade com a linguagem.
+### Percepções
+Durante os testes de retorno das anotações de reconhecimento facial do Cloud Vision pude perceber que algumas imagens poderiam estar visualmente com mais de um sentimento ao nível "muito provável", então fiz questão de que o código pudesse mostrar mais de um resultado ao usuário caso isso ocorra.
 
-### Percepições
-Durante os destes de retorno das anotações de reconhecimento facil do Cloud Vision pude perceber que algumas imagens poderiam estar visualmente mais de um sentimento ao nivél "muito provavél", então fiz questão de que o código pudese mostrar mais de um resultado ao usuário caso isso ocorra.
-
-Mesmo sabendo tecnicas mais modernas de programação front-end e usa-las no dia-a-dia, suas blibiotecas, frameowrks, transpiladores, etc.,
-é sempre interesante voltar as origens e escrever um código puro. Essa aplicação utilizou apenas a SDK do Firebase para realizar o upload, me recordou de meus primeiros códigos de requisão Ajax ao meu servidor PHP, ótima experiência!
+Mesmo sabendo técnicas mais modernas de programação front-end e usá-las no dia-a-dia, suas bibliotecas, frameworks, transpiladores, etc., é sempre interessante voltar às origens e escrever um código puro. Essa aplicação utilizou apenas a SDK do Firebase para realizar o upload, me recordou de meus primeiros códigos JS com requisição Ajax ao PHP, ótima experiência!
